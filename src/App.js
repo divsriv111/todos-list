@@ -1,52 +1,32 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Header from "./MyComponents/Header";
+import { Footer } from "./MyComponents/Footer";
+import { Todos } from "./MyComponents/Todos";
 
 function App() {
+  let todos = [
+    {
+      sno1: 1,
+      title: "Go to the market",
+      description: "Go to the weekend market shopping"
+    },
+    {
+      sno1: 2,
+      title: "Go to the mall",
+      description: "Go to the weekend market shopping"
+    },
+    {
+      sno1: 3,
+      title: "Go to the Ghat",
+      description: "Go to the weekend market shopping"
+    }
+  ]
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Todos List
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button classNameName="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
+      <Header title="My Todo List" searchBar={true} />
+      <Todos todos={todos} />
+      <Footer />
     </>
   );
 }
